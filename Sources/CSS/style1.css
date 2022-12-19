@@ -1,0 +1,353 @@
+/** * ! Changing default styles of the browser **/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+  }
+  i {
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  /** * ! Navbar STyles are here **/
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #212529;
+    color: white;
+    padding: 25px 40px;
+    margin-bottom: 30px;
+  }
+
+  .navbar a h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content:right;
+    background-color: #212529;
+  }
+
+  .cart {
+    position: relative;
+    background-color: #fff;
+    color: #212529;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  .cartAmount {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+  }
+  /** * ! Shop items styles are here **/
+  .shop {
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    gap: 30px;
+    justify-content: center;
+  }
+  @media (max-width: 1000px) {
+    .shop {
+        grid-template-columns: repeat(2, 223px);
+   }
+  }
+  @media (max-width: 500px) {
+    .shop {
+        grid-template-columns: repeat(1, 223px);
+   }
+  }
+  .item {
+    border: 2px solid #212529;
+    border-radius: 4px;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+  .price-quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 16px;
+  }
+  .bi-dash-lg {
+    color: red;
+    background: white;
+    padding: 0px;
+  }
+  .bi-plus-lg {
+    color: green;
+    background: white;
+    padding: 0px;
+  }
+  /** * ! style rules for label and some buttons **/
+  .text-center {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .HomeBtn, .checkout, .removeAll {
+    background-color: #212529;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .checkout {
+    background-color: green;
+    width: 22%;
+  }
+  .removeAll {
+    background-color: red;
+  }
+  .bi-x-lg {
+    color: red;
+    font-weight: bold;
+  }
+  /** * ! style rules for shopping-cart **/
+  .shopping-cart {
+    display: grid;
+    grid-template-columns: repeat(1, 320px);
+    justify-content: center;
+    gap: 15px;
+  }
+  /** * ! style rules for cart-item **/
+  .cart-item {
+    border: 2px solid #212529;
+    border-radius: 5px;
+    /* display: flex; */
+  }
+  .title-price-x {
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   /* border: 2px solid red;
+    */
+  }
+  .title-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cart-item-price {
+    background-color: #212529;
+    color: white;
+    border-radius: 4px;
+    padding: 3px 6px;
+  }
+  .wrapper{
+    width: 100%;
+    padding: 10px;
+  }
+  .container{
+    max-width: 500px;
+    height: auto;
+    margin: 0px auto;
+    background: #fff;
+    padding: 20px 40px 30px;
+   /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 7px solid #5f6c7d;
+    */
+    border-radius: 4px;
+    border: 3px solid #212529;
+  }
+  .title{
+    color: #212529;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .input-form{
+    margin-bottom: 20px;
+  }
+  .input-form .label{
+    display: block;
+    font-size: 1em;
+    color: #212529;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  .input-form .items{
+    margin-bottom: 20px;
+  }
+  .section-1 .items .input, .section-2 .items .input, .section-2 .items #sel-user, .section-3 .items .input{
+    background: transparent;
+    border: 2px solid #080808;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #000000;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  #sel-user {
+    background: transparent;
+    border: 2px solid #212529;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212529;
+    border-radius: 3px;
+  }
+
+
+
+  .section-4 .items .input{
+    background: transparent;
+    border: 2px solid #212529;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212529;
+    border-radius: 3px;
+  }
+
+  .input-form .section-3{
+    display: flex;
+    justify-content: space-between;
+  }
+  .input-form .section-3 .items{
+    width: 48%;
+  }
+  .btn_{
+    background: #212529;
+    color: #fff;
+    font-size: 1.25em;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .submit_btn, button {
+    background: #212529;
+    color: #fff;
+    font-size: 1.25em;
+    padding: 8px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    width: 100%;
+  }
+
+  .cvc{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .cvc .tooltip{
+    color: #d4d4d4;
+    border: 2px solid #d4d4d4;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align:center;
+    cursor: pointer;
+  }
+  .cvc .cvc-img{
+    position: absolute;
+    top: -300%;
+    right: 0;
+    background: #5f6c7d;
+    padding: 12px;
+    border-radius: 5px;
+    display: none;
+  }
+  .cvc .cvc-img img{
+    width: 100px;
+    height: auto;
+    display: block;
+  }
+  .cvc:hover .cvc-img{
+    display: block;
+  }
+  @media screen and (max-width: 460px){
+    .input-form .section-3 .section-4{
+        flex-direction: column;
+   }
+    .input-form .section-3 .section-4 .items{
+        width: 100%;
+   }
+    .input-form .items{
+        margin-bottom: 10px;
+   }
+    .input-form{
+        margin-bottom: 15px;
+   }
+    .title{
+        font-size: 1.5em;
+        margin-bottom: 15px;
+   }
+  }
+  
+  .rebtn {
+    width: 100%;
+    /* padding: 10px; */
+    background: #4a7606;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .wrapper .container form .error-msg {
+    font-weight: 100;
+    color: white;
+    display: block;
+    background: crimson;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  .hidden , .hidden2{
+    display: none;
+  }
+
+  .show , .show2{
+    display: block;
+  }
+
+  
