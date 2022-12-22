@@ -26,9 +26,9 @@ $conn = OpenCon();
 
 <body>
   <div class="navbar">
-    <h2>Clothing Store</h2>
+  <img src="../Images/logo.jpg" width="13%">
     <div style="display: flex; flex-direction: row; flex-wrap: nowrap;gap: 25px; justify-content: space-around; align-content: space-between;">
-      <h1>Welcome <?php echo $_SESSION['customer_name'] ?></h1>
+      <h1>Welcome, <?php echo $_SESSION['customer_name'] ?>!</h1>
       <a href="cart.php">
         <div class="cart">
           <i class="bi bi-cart2"></i>
@@ -58,30 +58,37 @@ $conn = OpenCon();
 			WHERE p.product_type_code = rp.product_type_code
 			ORDER BY p.product_id;";
 
+    $temp = $conn->query($sql);
+    $check = $temp->fetch_assoc();
+
 		$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result) > 0) {
 			  while ($row = mysqli_fetch_assoc($result)) {
+          if ($check["product_quantity"] > 0){
     ?>
-        <div class="item">
-          <div class="details">
-            <h1><?php echo $row['product_name'] ?></h1>
-            <h4>Type: <?php echo $row['product_type_description'] ?></h4>
-            <h4>Size: <?php echo $row['product_size'] ?></h4>
-            <p><?php echo $row['product_description'] ?></p>
-            <hr>
-            <div class="price-quantity">
+            <div class="item">
+              <div class="details">
+                <h1><?php echo $row['product_name'] ?></h1>
+                <h4>Type: <?php echo $row['product_type_description'] ?></h4>
+                <h4>Size: <?php echo $row['product_size'] ?></h4>
+                <h4>Quantity left: <?php echo $row['product_quantity'] ?></h4>
+                <p><?php echo $row['product_description'] ?></p>
+                <hr>
+                <div class="price-quantity">
 
-            <h2> ₱ <?php echo $row['product_price'] ?></h2>
-			<form action="php/update.php" method="post">
-				<input type="submit" style="width: 110px; font-weight: bold; font-size: 15px; background: #208b20;" class="btn btn-success" name="add_to_cart" value="Add">
-        <input type="hidden" name="id" value="<?php echo $row['product_id']; ?>">
-		    <input type="hidden" name="price" value="<?php echo $row['product_price']; ?>">
-			</form>
+                <h2> ₱ <?php echo $row['product_price'] ?></h2>
+          <form action="php/update.php" method="post">
+            <input type="submit" style="width: 110px; font-weight: bold; font-size: 15px; background: #208b20;" class="btn btn-success" name="add_to_cart" value="Add">
+            <input type="hidden" name="id" value="<?php echo $row['product_id']; ?>">
+            <input type="hidden" name="price" value="<?php echo $row['product_price']; ?>">
+          </form>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
     <?php
-      }
+            }
+            $check = $temp->fetch_assoc();
+        }
     } else {
       echo "0 Products";
     }

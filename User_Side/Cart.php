@@ -13,7 +13,7 @@
 <body>
     <div class="navbar">
         <a href="index.php">
-            <h2>Clothing Store</h2>
+        <img src="../Images/logo.jpg" width="13%">
         </a>
 
         <a href="index.php">
@@ -127,11 +127,9 @@
     <?php
                 }
             } else {
-                echo "        <div class='item'>
-                    <div class='details'>
-                        <h1>0 Products</h1>
-                    </div>
-                </div>";
+                echo "        
+                <h1><center>Cart is Empty</center></h1>
+                ";
             }
                 mysqli_close($conn);
     ?>

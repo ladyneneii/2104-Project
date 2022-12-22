@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 <body>
   <div class="navbar">
     <a href="">
-      <h2><center>Clothing Store</center></h2>
+    <img src="Images/logo.jpg" width="13%">
     </a>
 
 
